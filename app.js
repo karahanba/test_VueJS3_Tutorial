@@ -43,7 +43,12 @@ const app = Vue.createApp({
             item.isFav = !item.isFav
 
         }
-
+    },
+    computed:{
+        filteredBooks(){
+            /*return 'hello'*/
+            return this.books.filter((item) => item.isFav)
+        }
     }
 })
 

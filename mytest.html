@@ -47,6 +47,7 @@
 
 <div id="app">
 
+    <p>{{filteredBooks}}</p>
     <!-- attribute binding -->
     <!--<a href="http://www.google.com">Google</a>-->
     <a v-bind:href="url">Google</a>
@@ -54,7 +55,8 @@
     <div v-if="showBooks"><!--true ise show, false ise no show-->
 <!--        <p>{{ title }} - {{ author }} - {{ age }}</p>-->
         <ul>
-            <li v-for="item in books" :class="{ fav: item.isFav}" @click="toggleFav(item)">
+            <li v-for="item in filteredBooks" :class="{ fav: item.isFav}" @click="toggleFav(item)">
+                <!--<li v-for="item in books" :class="{ fav: item.isFav}" @click="toggleFav(item)">-->
                 <img :src="item.img" :alt="item.title">
                 <h3>{{item.title}}</h3>
                 <p>{{item.author}}</p>
